@@ -18,7 +18,7 @@ public class ContractService {
           Calendar calendar = Calendar.getInstance();
           calendar.setTime(date);
           calendar.add(Calendar.MONTH,i + 1);
-          installmentPartedValue = onlinePaymentService.interest(installmentPartedValue, i+1);
+          installmentPartedValue += onlinePaymentService.interest(installmentPartedValue, i+1);
           Double sum = onlinePaymentService.paymentFee(installmentPartedValue);
           contract.addInstallments( new Installment(calendar.getTime(), sum));
 
