@@ -1,13 +1,15 @@
 package entities;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Contract {
     private Date date;
     private Integer number;
     private Double totalValue;
-    private Installment installments;
-
+    private List<Installment> installments = new ArrayList<>();
 
 
 
@@ -18,7 +20,7 @@ public class Contract {
         this.date = date;
         this.number = number;
         this.totalValue = totalValue;
-        this.installments = installments;
+        this.installments.add(installments);
     }
 
     public Contract(Date date, Integer number, Double totalValue) {
@@ -51,11 +53,13 @@ public class Contract {
         this.totalValue = totalValue;
     }
 
+    public List<Installment> getInstallments() {
+        return installments;
+    }
 
-
-
-
-
+    public void addInstallments(Installment installments) {
+        this.installments.add(installments);
+    }
 }
 
 
