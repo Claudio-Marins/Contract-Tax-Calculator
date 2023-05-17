@@ -25,8 +25,7 @@ public class Main {
         int number = sc.nextInt();
         sc.nextLine();
         System.out.print("Data (dd/MM/yyyy): ");
-        String contractDate = sc.nextLine();
-        Date date = sdf.parse(contractDate);
+        Date date = sdf.parse(sc.nextLine());
         System.out.print("Valor do contrato: ");
         double totalValue = sc.nextDouble();
         System.out.print("Entre com o numero de parcelas: ");
